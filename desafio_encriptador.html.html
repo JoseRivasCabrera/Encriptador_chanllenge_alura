@@ -11,38 +11,38 @@
 
 </head>
 <body>
-    <section class="contenedor-principal">
+    <main>
+        <section class="contenedor-principal">
        
-        <div class="caja-imagen">
-            <div class="contenedor-imagen">
-            <img src="images/incognito.png" alt="imagen incognito" class="imagen-incognito">
+            <div class="caja-imagen">
+                <div class="contenedor-imagen">
+                    <img src="images/incognito.png" alt="imagen incognito" class="imagen-incognito">
+                </div>
             </div>
-        </div>
 
-        <div class="caja-botones">
-            <div class="mensaje-aviso"> &#10033; No ingreses mayúsculas ni acentos</div>
-            <div class="contenedor-botones">
-                <input class="boton-encriptar botones" type="button" value="Encriptar" id="encriptar" onclick="alerta()">
-            <!-- /*con la funcion "onclick" estoy llamando a la funcion "alerta" que esta en el javascript*/ -->
-                <input class="boton-desencriptar botones" type="button" value="Desencriptar" id="desencriptar">
+            <div class="caja-botones">
+                <div class="mensaje-aviso"> &#10033; No ingreses mayúsculas ni acentos</div>
+
+                <div class="contenedor-botones">
+                     <input class="boton-encriptar botones" type="button" value="Encriptar" id="encriptar" onclick="alerta()">
+                     <!-- /*con la funcion "onclick" estoy llamando a la funcion "alerta" que esta en el javascript*/ -->
+                     <input class="boton-desencriptar botones" type="button" value="Desencriptar" id="desencriptar">
+                </div>
             </div>
-        </div>
 
-        <div class="caja-entrada">
-            <textarea class="texto-entrada" placeholder="Ingresa tu texto aquí"></textarea>
-           
-        </div>
-
-        <div class="caja-salida">
-            <textarea class="texto-salida" placeholder="Aquí va tu resultado"></textarea>
-            <div class="caja-copiar">
-                <input class="boton-copiar botones" type="button" value="copiar">
+            <div class="caja-entrada">
+                <textarea class="texto-entrada" placeholder="Ingresa tu texto aquí"></textarea>
             </div>
-        </div>
 
+            <div class="caja-salida">
+                <textarea class="texto-salida" placeholder="Aquí va tu resultado"></textarea>
 
-    </section>
-    
+                <div class="caja-copiar">
+                    <input class="boton-copiar botones" type="button" value="copiar">
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 <footer>
