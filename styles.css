@@ -13,6 +13,7 @@ body {
 }
 
 .caja-imagen {
+    border: 5px solid #3e6363;
     border-radius: 15px;
     width: 100%;
     height: auto;
@@ -78,7 +79,6 @@ body {
 }
 
 .texto-entrada {
-    color: white;
     width: 75%;
     height: 70%;
     border: none;
