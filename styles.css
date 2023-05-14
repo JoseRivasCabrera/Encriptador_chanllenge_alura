@@ -85,13 +85,19 @@ body {
     background: none;
     font-size: 24px;
     margin: 15px auto auto 10%;
+    text-transform: lowercase;
+}
+
+::placeholder { color: gray; }
+.texto-entrada { 
+    outline: none;
 }
 
 .mensaje-aviso {
     width: 230px;
     font-size: 14px;
     font-weight: bold;
-    color: white;
+    color: black;
     margin: 1% auto 0 19%;
 }
 
@@ -110,6 +116,12 @@ body {
     border: none;
     font-size: 24px;
     margin: 15px auto auto 10%;
+    text-transform: lowercase;
+}
+
+::placeholder {color: gray;}
+.texto-salida { 
+    outline: none;
 }
 
 .caja-copiar {
