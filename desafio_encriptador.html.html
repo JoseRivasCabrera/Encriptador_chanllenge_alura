@@ -24,18 +24,17 @@
                 <div class="mensaje-aviso"> &#10033; No ingreses mayúsculas ni acentos</div>
 
                 <div class="contenedor-botones">
-                     <input class="boton-encriptar botones" type="button" value="Encriptar" id="encriptar" onclick="alerta()">
-                     <!-- /*con la funcion "onclick" estoy llamando a la funcion "alerta" que esta en el javascript*/ -->
-                     <input class="boton-desencriptar botones" type="button" value="Desencriptar" id="desencriptar">
+                     <button class="boton-encriptar botones" onclick="btnencriptar()">Encriptar</button>
+                     <button class="boton-desencriptar botones">Desencriptar </button>
                 </div>
             </div>
 
             <div class="caja-entrada">
-                <textarea class="texto-entrada" placeholder="Ingresa tu texto aquí"></textarea>
+                <textarea class="textoEntrada" placeholder="Ingresa tu texto aquí"></textarea>
             </div>
 
             <div class="caja-salida">
-                <textarea class="texto-salida" placeholder="Aquí va tu resultado"></textarea>
+                <textarea class="textoSalida" placeholder="Aquí va tu resultado"></textarea>
 
                 <div class="caja-copiar">
                     <input class="boton-copiar botones" type="button" value="copiar">
