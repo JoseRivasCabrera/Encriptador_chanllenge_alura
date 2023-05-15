@@ -78,7 +78,7 @@ body {
     grid-row: 2/2;
 }
 
-.texto-entrada {
+.textoEntrada {
     width: 75%;
     height: 70%;
     border: none;
@@ -89,7 +89,7 @@ body {
 }
 
 ::placeholder { color: gray; }
-.texto-entrada { 
+.textoEntrada { 
     outline: none;
 }
 
@@ -102,14 +102,15 @@ body {
 }
 
 .caja-salida {
+    background: white;
     border: 2px solid royalblue;
     border-radius: 15px;
     grid-column: 3/-1;
     grid-row: 1/-1;
-    background: white;
+    
 }
 
-.texto-salida {
+.textoSalida {
     text-align: center;
     width: 75%;
     height: 70%;
@@ -120,7 +121,7 @@ body {
 }
 
 ::placeholder {color: gray;}
-.texto-salida { 
+.textoSalida { 
     outline: none;
 }
 
