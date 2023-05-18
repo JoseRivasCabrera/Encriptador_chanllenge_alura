@@ -27,6 +27,25 @@ const mensaje = document.querySelector(".textoSalida");
      return stringEncriptada;
  }
 
+
+ function btndesencriptar(){
+    const textoencriptado = desencriptar(textArea.value)
+    mensaje.value = textoencriptado;
+    textArea.vaue = textArea.value = "";
+}
+
+ function desencriptar(stringDesencriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase()
+    
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+        stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
+        }
+     }
+    return stringDesencriptada;
+}
+
  function eliminatexto() {
     mensaje.value = mensaje.value = "";
 }
