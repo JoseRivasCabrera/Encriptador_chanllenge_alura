@@ -52,9 +52,13 @@ const mensaje = document.querySelector(".textoSalida");
 
  function eliminatexto() {
     mensaje.value = mensaje.value = "";
+    textArea.value = textArea.value = "";
+    var copy = document.getElementById("boton-copiar");
+    copy.innerHTML = "Copiar";
 }
 
 function copiarTexto() {
+    textArea.value = textArea.value = "";
     mensaje.select();
     document.execCommand("copy");
     mensaje.blur();
