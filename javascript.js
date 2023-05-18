@@ -13,6 +13,8 @@ const mensaje = document.querySelector(".textoSalida");
       const textoencriptado = encriptar(textArea.value)
       mensaje.value = textoencriptado;
       textArea.vaue = textArea.value = "";
+      var copy = document.getElementById("boton-copiar");
+      copy.innerHTML = "copiar";
   }
 
   function encriptar(stringEncriptada){
@@ -32,6 +34,8 @@ const mensaje = document.querySelector(".textoSalida");
     const textoencriptado = desencriptar(textArea.value)
     mensaje.value = textoencriptado;
     textArea.vaue = textArea.value = "";
+    var copy = document.getElementById("boton-copiar");
+      copy.innerHTML = "copiar";
 }
 
  function desencriptar(stringDesencriptada){
@@ -49,4 +53,12 @@ const mensaje = document.querySelector(".textoSalida");
  function eliminatexto() {
     mensaje.value = mensaje.value = "";
 }
+
+function copiarTexto() {
+    mensaje.select();
+    document.execCommand("copy");
+    mensaje.blur();
+    var copy = document.getElementById("boton-copiar");
+    copy.innerHTML = "¡Copiado!";
+  }
 
