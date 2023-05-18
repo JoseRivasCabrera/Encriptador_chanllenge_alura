@@ -8,9 +8,14 @@
 const textArea = document.querySelector(".textoEntrada");
 const mensaje = document.querySelector(".textoSalida");
 
+function eliminatexto() {
+    mensaje.value = mensaje.value = "";
+}
+
   function btnencriptar(){
       const textoencriptado = encriptar(textArea.value)
       mensaje.value = textoencriptado;
+      textArea.vaue = textArea.value = "";
   }
 
   function encriptar(stringEncriptada){
@@ -24,4 +29,6 @@ const mensaje = document.querySelector(".textoSalida");
       }
      return stringEncriptada;
  }
+
+
 
