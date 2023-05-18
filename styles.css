@@ -107,7 +107,21 @@ body {
     border-radius: 15px;
     grid-column: 3/-1;
     grid-row: 1/-1;
-    
+}
+
+.btneliminar{
+background: url(images/eliminar.png) center;
+background-size: 100% 100%;
+border: none;
+width: 30px;
+height: 30px;
+display: flex;
+margin: 5px 15px auto auto;
+}
+
+.btneliminar:hover{
+    background: url(images/eliminar1.png) center;
+    background-size: 100% 100%;
 }
 
 .textoSalida {
@@ -127,7 +141,7 @@ body {
 
 .caja-copiar {
     width: 300px;
-    margin: 20% auto auto 14%;
+    margin: 10% auto auto 14%;
 }
 
 .boton-copiar:hover {
