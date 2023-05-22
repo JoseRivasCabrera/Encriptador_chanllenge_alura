@@ -154,67 +154,68 @@ margin: 5px 15px auto auto;
 
     .contenedor-principal {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 280px;
         grid-template-rows: auto auto auto auto;
         gap: 10px;
     }
 
     .caja-imagen { 
+        width: 97%;
         grid-column: 1/2;
         grid-row: 1/2;
     }
+    .textoEntrada {
+        width: auto;
+        height: 70%;
+    }
 
     .caja-botones {
+        width: 280.93px;
+        border: 1px solid black;
         grid-column: 1/2;
         grid-row: 3/4;
+        justify-items: normal;
+    }
+
+    .contenedor-botones{
+     margin-left: 23px;
+    }
+
+    .mensaje-aviso{
+        font-size: 11px;
+    }
+
+    .botones {
+        font-size: 15px;
+        width: 118.04px;
+        height: 40px;
+        border-radius: 15px;
+    }
+
+    .boton-desencriptar:hover { 
+        font-size: 18px;
+        transition: 1s
     }
 
     .caja-entrada {
+        margin-top: 7px;
         grid-column: 1/2;
         grid-row: 2/3;
     }
 
     .caja-salida {
+        width: 280px;
+        margin-top: 7px;
         grid-column: 1/2;
         grid-row: 4/-1;
     }
-}
-/* .body{
-    width: auto;
-    height: auto;
-}
 
-.contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
+    footer .pie {
+        display: flex;
+        margin-top: 200px;
+    }
 
+    .caja-copiar {
+        margin: 10px auto 250px 80px
+    }
 }
-.caja-imagen {
-    order: 1;
-}
-
-.caja-entrada {
-    order: 2;
-    margin-top: 20px;
-}
-
-.caja-botones {
-    order: 3;
-    margin-top: 20px;
-}
-
-.caja-salida {
-    order: 4;
-    margin-top: 20px;
-}
-
-.botones{
-    width: 150px;
-    height: 50px;
-    font-size: 15px;
-}
-
-.contenedor-botones {
-    margin: 0 auto auto 20px;
-} */
