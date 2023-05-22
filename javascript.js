@@ -58,11 +58,25 @@ const mensaje = document.querySelector(".textoSalida");
 }
 
 function copiarTexto() {
-    textArea.value = textArea.value = "";
+    if (textArea.value, mensaje.value == ""){
+        alert("Nada que copiar")
+    }
+    else {
     mensaje.select();
     document.execCommand("copy");
     mensaje.blur();
     var copy = document.getElementById("boton-copiar");
     copy.innerHTML = "¡Copiado!";
-  }
+    textArea.value = textArea.value = "";
+    }
+}
 
+function vaciar() {
+ if (textArea.value == "") {
+  copiarTexto()
+ }
+
+ else {
+    alert("buenas")
+ }
+}
