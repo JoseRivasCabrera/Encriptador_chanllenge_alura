@@ -71,12 +71,3 @@ function copiarTexto() {
     }
 }
 
-function vaciar() {
- if (textArea.value == "") {
-  copiarTexto()
- }
-
- else {
-    alert("buenas")
- }
-}
