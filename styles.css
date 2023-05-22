@@ -171,7 +171,6 @@ margin: 5px 15px auto auto;
 
     .caja-botones {
         width: 280.93px;
-        border: 1px solid black;
         grid-column: 1/2;
         grid-row: 3/4;
         justify-items: normal;
