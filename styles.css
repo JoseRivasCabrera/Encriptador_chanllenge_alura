@@ -83,6 +83,7 @@ body {
     font-size: 24px;
     margin: 15px auto auto 10%;
     text-transform: lowercase;
+    resize: none;
 }
 
 ::placeholder { color: gray; }
@@ -129,6 +130,7 @@ body {
     font-size: 24px;
     margin: 15px auto auto 10%;
     text-transform: lowercase;
+    resize: none;
 }
 
 ::placeholder {color: gray;}
@@ -222,10 +224,10 @@ body {
         margin: 15px auto auto 40px;
     }
 
-    /* footer .pie {
-        width: 280px
-        margin-top: 20p
-    } */
+    .pie {
+        width: 280px;
+        margin-top: 20px;
+    }
 
     .caja-copiar {
         width: 150px;
