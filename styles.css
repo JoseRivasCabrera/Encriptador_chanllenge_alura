@@ -219,7 +219,7 @@ body {
     }
 
     .textoSalida {
-        margin: 50px auto auto 40px;
+        margin: auto auto auto 40px;
     }
 
     /* footer .pie {
@@ -229,7 +229,7 @@ body {
 
     .caja-copiar {
         width: 200px;
-        margin: auto auto 300px 130px
+        margin: auto auto 300px 120px
 
     }
 }
