@@ -174,7 +174,6 @@ body {
         width: 280.93px;
         grid-column: 1/2;
         grid-row: 3/4;
-        justify-items: normal;
     }
 
     .contenedor-botones {
@@ -201,6 +200,11 @@ body {
     }
 
     .caja-entrada {
+        width: auto;
+        height: 300px;
+        border: 2px solid royalblue;
+        border-radius: 15px;
+        background: white;
         margin-top: 7px;
         grid-column: 1/2;
         grid-row: 2/3;
@@ -210,13 +214,13 @@ body {
         width: 280px;
         margin-top: 7px;
         grid-column: 1/2;
-        grid-row: 4/-1;
+        grid-row: 4/-2;
     }
 
-    footer .pie {
-        display: flex;
-        margin-top: 200px;
-    }
+    /* footer .pie {
+        width: 280px;
+        margin-top: 20px;
+    } */
 
     .caja-copiar {
         width: 120px;
