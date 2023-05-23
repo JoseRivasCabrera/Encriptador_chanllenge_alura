@@ -176,7 +176,7 @@ body {
     .contenedor-botones { 
         width: auto;
         height: auto;
-        margin: 2% auto auto 40px;
+        margin: 2% auto auto 37px;
      }
 
     .mensaje-aviso{
@@ -229,7 +229,7 @@ body {
 
     .caja-copiar {
         width: 150px;
-        margin: auto auto 300px 110px
+        margin: auto auto 300px 115px
 
     }
 }
