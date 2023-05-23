@@ -110,13 +110,13 @@ body {
 }
 
 .btneliminar{
-background: url(images/eliminar.png) center;
-background-size: 100% 100%;
-border: none;
-width: 30px;
-height: 30px;
-display: flex;
-margin: 5px 15px auto auto;
+    background: url(images/eliminar.png) center;
+    background-size: 100% 100%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin: 5px 15px auto auto;
 }
 
 .btneliminar:hover{
@@ -153,6 +153,7 @@ margin: 5px 15px auto auto;
 @media screen and (max-width:480px) {
 
     .contenedor-principal {
+        height: auto;
         display: grid;
         grid-template-columns: 280px;
         grid-template-rows: auto auto auto auto;
@@ -176,9 +177,12 @@ margin: 5px 15px auto auto;
         justify-items: normal;
     }
 
-    .contenedor-botones{
-     margin-left: 23px;
-    }
+    .contenedor-botones {
+        margin-left: 23px;
+        width: auto;
+        height: auto;
+        margin: 2% auto auto 10%;
+     }
 
     .mensaje-aviso{
         font-size: 11px;
@@ -215,6 +219,7 @@ margin: 5px 15px auto auto;
     }
 
     .caja-copiar {
+        width: 120px;
         margin: 10px auto 250px 80px
 
     }
