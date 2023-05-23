@@ -180,7 +180,7 @@ body {
         margin-left: 23px;
         width: auto;
         height: auto;
-        margin: 2% auto auto 5.5%;
+        margin: 2% auto auto 12%;
      }
 
     .mensaje-aviso{
@@ -189,7 +189,7 @@ body {
 
     .botones {
         font-size: 15px;
-        width: 200px;
+        width: 150px;
         height: 40px;
         border-radius: 15px;
     }
@@ -224,7 +224,7 @@ body {
 
     .caja-copiar {
         width: 200px;
-        margin: auto auto 250px auto
+        margin: auto auto 250px 125px
 
     }
 }
