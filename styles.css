@@ -226,7 +226,7 @@ body {
         width: 30px;
         height: 30px;
         margin: 5px 15px auto auto;
-        border: 1px solid black;
+        background: black;
     }
 
     /* footer .pie {
@@ -236,7 +236,7 @@ body {
 
     .caja-copiar {
         width: 150px;
-        margin: auto auto 300px 110px
+        margin: auto auto 300px 90px
 
     }
 }
