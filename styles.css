@@ -222,13 +222,6 @@ body {
         margin: 10px auto auto 40px;
     }
 
-    .btneliminar{
-        width: 30px;
-        height: 30px;
-        margin: 5px 15px auto auto;
-        background: black;
-    }
-
     /* footer .pie {
         width: 280px;
         margin-top: 20px;
@@ -236,7 +229,7 @@ body {
 
     .caja-copiar {
         width: 150px;
-        margin: auto auto 300px 90px
+        margin: auto auto 300px 125px
 
     }
 }
