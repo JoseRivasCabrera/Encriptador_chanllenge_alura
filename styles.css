@@ -173,11 +173,10 @@ body {
         grid-row: 3/4;
     }
 
-    .contenedor-botones {
-        margin-left: 23px;
+    .contenedor-botones { 
         width: auto;
         height: auto;
-        margin: 2% auto auto 12%;
+        margin: 2% auto auto 20px;
      }
 
     .mensaje-aviso{
@@ -219,6 +218,7 @@ body {
     }
 
     .textoSalida {
+        width: auto;
         margin: 10px auto auto 40px;
     }
 
@@ -229,7 +229,7 @@ body {
 
     .caja-copiar {
         width: 150px;
-        margin: auto auto 300px 135px
+        margin: auto auto 300px 95px
 
     }
 }
