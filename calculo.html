@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de salario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            margin: 8px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .btn-limpiar {
+            background-color: #dc3545;
+        }
+        .btn-limpiar:hover {
+            background-color: #c82333;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .result .salario-libre {
+            background-color: #28a745;
+            padding: 15px;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 80%;
+            max-width: 400px;
+        }
+        .popup h2 {
+            margin-bottom: 20px;
+        }
+        .popup-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .popup-buttons button {
+            width: 48%;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Cálculo de salario</h1>
+        <div id="formulario">
+            <label for="diurno">Guardias Diurnas:</label>
+            <input type="number" id="diurno" min="0" placeholder="Ingrese días diurnos"><label for="mixto">Guardias Mixtas:</label>
+        <input type="number" id="mixto" min="0" placeholder="Ingrese días mixtos"><label for="nocturno">Guardias Nocturnas:</label>
+    <input type="number" id="nocturno" min="0" placeholder="Ingrese días nocturnos">
+
+    <label for="libre">Días Libres:</label>
+    <input type="number" id="libre" min="0" placeholder="Ingrese días libres">
+
+    <button onclick="calcularSalario()">Calcular Salario</button>
+</div>
+<button class="btn-limpiar" onclick="limpiarCampos()">Limpiar</button>
+
+<div class="result" id="resultado"></div>
+
+</div><div class="overlay" id="overlay"></div>
+<div class="popup" id="popupMensaje">
+    <h2>Llena los campos</h2>
+    <button onclick="cerrarPopups()">Aceptar</button>
+</div><div class="popup" id="popupExtras">
+    <h2>¿Has realizado guardias extras?</h2>
+    <div class="popup-buttons">
+        <button onclick="guardiaExtras(true)">Sí</button>
+        <button onclick="guardiaExtras(false)">No</button>
+    </div>
+</div><div class="popup" id="popupCantidadExtras">
+    <h2>¿Cuántas guardias extras realizaste?</h2>
+    <input type="number" id="cantidadExtras" min="0" placeholder="Ingrese cantidad">
+    <button onclick="agregarGuardiasExtras()">Aceptar</button>
+</div><script>
+    let totalNormal = 0;
+let totalExtras = 0;
+const salarioDiurno = 13306.79;
+const salarioMixto = 16158.24;
+const salarioNocturno = 19960.18;
+const salarioLibre = 13306.79;
+const porcentajeCCSS = 0.1067;
+
+function calcularSalario() {
+    // Restablecer el campo de guardias extras al comenzar un nuevo cálculo
+    document.getElementById('cantidadExtras').value = '';
+    
+    const diurno = parseInt(document.getElementById('diurno').value) || 0;
+    const mixto = parseInt(document.getElementById('mixto').value) || 0;
+    const nocturno = parseInt(document.getElementById('nocturno').value) || 0;
+    const libre = parseInt(document.getElementById('libre').value) || 0;
+
+    if (diurno < 1 || mixto < 1 || nocturno < 1 || libre < 1) {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popupMensaje').style.display = 'block';
+        return;
+    }
+
+    totalNormal = (diurno * salarioDiurno) + (mixto * salarioMixto) + (nocturno * salarioNocturno) + (libre * salarioLibre);
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popupExtras').style.display = 'block';
+}
+
+function guardiaExtras(realizada) {
+    if (realizada) {
+        document.getElementById('popupExtras').style.display = 'none';
+        document.getElementById('popupCantidadExtras').style.display = 'block';
+    } else {
+        // Si no hay extras, asignamos 0
+        totalExtras = 0;
+        cerrarPopups();
+        mostrarResultado();
+    }
+}
+
+function agregarGuardiasExtras() {
+    const cantidadExtras = parseInt(document.getElementById('cantidadExtras').value) || 0;
+    totalExtras = cantidadExtras * salarioDiurno;
+    cerrarPopups();
+    mostrarResultado();
+}
+
+function cerrarPopups() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popupExtras').style.display = 'none';
+    document.getElementById('popupCantidadExtras').style.display = 'none';
+    document.getElementById('popupMensaje').style.display = 'none';
+}
+
+function mostrarResultado() {
+    const ccss = (totalNormal + totalExtras) * porcentajeCCSS;
+    const salarioLibreTotal = totalNormal + totalExtras - ccss;
+    const formatoMoneda = new Intl.NumberFormat('es-CR', {
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    let resultadoHtml = `
+        <p>Salario Ordinario: ₡${formatoMoneda.format(totalNormal)}</p>
+        ${totalExtras > 0 ? `<p>Guardias Extras: ₡${formatoMoneda.format(totalExtras)}</p>` : ''}
+        <p>CCSS (10,67%): ₡${formatoMoneda.format(ccss)}</p>
+        <div class="salario-libre">Salario Libre: ₡${formatoMoneda.format(salarioLibreTotal)}</div>
+    `;
+
+    document.getElementById('resultado').innerHTML = resultadoHtml;
+
+    // Ocultar formulario y mostrar resultados
+    document.getElementById('formulario').style.display = 'none';
+    document.getElementById('resultado').style.display = 'block';
+}
+
+function limpiarCampos() {
+    document.getElementById('diurno').value = '';
+    document.getElementById('mixto').value = '';
+    document.getElementById('nocturno').value = '';
+    document.getElementById('libre').value = '';
+    document.getElementById('cantidadExtras').value = '';
+    document.getElementById('resultado').innerHTML = '';
+    document.getElementById('formulario').style.display = 'block';
+    document.getElementById('resultado').style.display = 'none';
+}
+</script></body>
+</html>
