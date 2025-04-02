@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Estudio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            font-size: 28px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #e0e0e0;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+        input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Plan de Estudio</h2>
+        <ul id="study-plan">
+            <li><strong>Miércoles</strong></li>
+            <li><input type="checkbox" data-task="miercoles_ing1"> 11:00 AM - 1:00 PM: Inglés</li>
+            <li><input type="checkbox" data-task="miercoles_alm"> 1:00 PM - 2:00 PM: Almuerzo y descanso</li>
+            <li><input type="checkbox" data-task="miercoles_civ"> 2:00 PM - 4:00 PM: Cívica</li>
+            <li><input type="checkbox" data-task="miercoles_ing2"> 4:00 PM - 6:00 PM: Inglés</li>
+            <li><input type="checkbox" data-task="miercoles_desc"> 6:00 PM - 6:30 PM: Descanso</li>
+            <li><input type="checkbox" data-task="miercoles_civ2"> 6:30 PM - 8:30 PM: Cívica</li>
+            <li><input type="checkbox" data-task="miercoles_cena"> 8:30 PM - 9:30 PM: Cena y descanso</li>
+            <li><input type="checkbox" data-task="miercoles_sim_ing"> 9:30 PM - 11:00 PM: Simulacro de Inglés</li>
+            <li><input type="checkbox" data-task="miercoles_sim_civ"> 11:00 PM - 12:00 AM: Simulacro de Cívica</li>
+            
+            <li><strong>Jueves</strong></li>
+            <li><input type="checkbox" data-task="jueves_mat"> 8:00 AM - 10:00 AM: Matemáticas</li>
+            <li><input type="checkbox" data-task="jueves_soc"> 10:00 AM - 12:00 PM: Estudios Sociales</li>
+            <li><input type="checkbox" data-task="jueves_alm"> 12:00 PM - 1:00 PM: Almuerzo y descanso</li>
+            <li><input type="checkbox" data-task="jueves_ing"> 1:00 PM - 3:00 PM: Inglés</li>
+            <li><input type="checkbox" data-task="jueves_mat2"> 3:00 PM - 5:00 PM: Matemáticas</li>
+            <li><input type="checkbox" data-task="jueves_desc"> 5:00 PM - 5:30 PM: Descanso</li>
+            <li><input type="checkbox" data-task="jueves_soc2"> 5:30 PM - 7:30 PM: Estudios Sociales</li>
+            <li><input type="checkbox" data-task="jueves_cena"> 7:30 PM - 8:30 PM: Cena y descanso</li>
+            <li><input type="checkbox" data-task="jueves_ing2"> 8:30 PM - 10:00 PM: Inglés</li>
+            <li><input type="checkbox" data-task="jueves_sim"> 10:00 PM - 12:00 AM: Simulacro de Inglés</li>
+            
+            <li><strong>Viernes</strong></li>
+            <li><input type="checkbox" data-task="viernes_ing1"> 8:00 AM - 10:00 AM: Inglés</li>
+            <li><input type="checkbox" data-task="viernes_ing2"> 10:00 AM - 12:00 PM: Inglés</li>
+            <li><input type="checkbox" data-task="viernes_alm"> 12:00 PM - 1:00 PM: Almuerzo y descanso</li>
+            <li><input type="checkbox" data-task="viernes_mat"> 1:00 PM - 3:00 PM: Matemáticas</li>
+            <li><input type="checkbox" data-task="viernes_soc"> 3:00 PM - 5:00 PM: Estudios Sociales</li>
+            <li><input type="checkbox" data-task="viernes_desc"> 5:00 PM - 5:30 PM: Descanso</li>
+            <li><input type="checkbox" data-task="viernes_sim"> 5:30 PM - 7:30 PM: Simulacro de Inglés</li>
+            <li><input type="checkbox" data-task="viernes_cena"> 7:30 PM - 8:30 PM: Cena y descanso</li>
+        </ul>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll("input[type='checkbox']");
+            
+            checkboxes.forEach(checkbox => {
+                const task = checkbox.getAttribute("data-task");
+                checkbox.checked = localStorage.getItem(task) === "true";
+                
+                checkbox.addEventListener("change", function () {
+                    localStorage.setItem(task, this.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
