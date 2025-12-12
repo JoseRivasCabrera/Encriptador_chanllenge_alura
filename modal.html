@@ -13,7 +13,7 @@
         color: #333;
     }
 
-    /* Fondo oscuro con blur */
+    /* Fondo del modal con blur */
     .overlay {
         position: fixed;
         inset: 0;
@@ -38,27 +38,20 @@
         animation: scaleIn 0.35s ease-out;
     }
 
-    /* Triángulo amarillo */
-    .triangle-warning {
-        width: 0;
-        height: 0;
-        border-left: 45px solid transparent;
-        border-right: 45px solid transparent;
-        border-bottom: 75px solid #ffcc00;
+    /* Icono circular verde */
+    .icon-warning {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: #2ecc71;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 0 auto 18px;
-        position: relative;
+        color: #fff;
+        font-size: 40px;
+        font-weight: 700;
         animation: pulse 1.6s infinite ease-in-out;
-    }
-
-    /* Signo de exclamación dentro del triángulo */
-    .triangle-warning::after {
-        content: "!";
-        position: absolute;
-        top: 28px;
-        left: -5px;
-        font-size: 38px;
-        font-weight: 900;
-        color: #000;
     }
 
     h2 {
@@ -106,23 +99,23 @@
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.07); }
-        100% { transform: scale(1); }
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+        50% { transform: scale(1.08); box-shadow: 0 0 18px 6px rgba(46, 204, 113, 0.25); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
     }
 </style>
 </head>
 <body>
 
-<!-- Modal automático -->
+<!-- Modal automatico -->
 <div class="overlay" id="maintenanceModal">
     <div class="modal">
-        <div class="triangle-warning"></div>
+        <div class="icon-warning">!</div>
         <h2>Mantenimiento en Progreso</h2>
         <p>
-            Estamos realizando mejoras en la plataforma para aumentar el rendimiento
-            y la estabilidad.  
-            Regresaremos en breve.
+            Nuestra plataforma está realizando mejoras para aumentar la estabilidad,
+            velocidad y seguridad.  
+            Estaremos de vuelta en breve.
         </p>
         <button class="btn" onclick="cerrarModal()">Entendido</button>
     </div>
